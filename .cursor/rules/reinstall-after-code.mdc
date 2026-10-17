@@ -1,0 +1,23 @@
+---
+description: Rebuild and reinstall the local QuotaBar DMG after source changes, without touching user data
+alwaysApply: true
+---
+
+# Local DMG reinstall after code changes
+
+After you finish changing QuotaBar app source (`Sources/`, `Package.swift`, `VERSION`, `.swift-version`, or `scripts/build_macos_app.sh`), run:
+
+```bash
+scripts/reinstall_local_dmg.sh
+```
+
+This rebuilds the app, creates a DMG, replaces `/Applications/QuotaBar.app`, and relaunches QuotaBar.
+
+Do not modify, delete, or rewrite user-level data, including:
+
+- `~/Library/Application Support/QuotaBar/` (accounts, credentials, quota cache, profiles)
+- macOS Keychain items
+- `~/Library/Preferences/com.local.quotabar.plist`
+- `~/.quotabar.json` and `~/.quotabar-credentials.json`
+
+If only docs, tests, or hook/scripts other than `build_macos_app.sh` changed, skip the reinstall. If the stop hook asks you to reinstall, run the script once and stop.

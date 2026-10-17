@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": ".cursor/hooks/mark-dmg-reinstall-needed.py",
+        "timeout": 10
+      }
+    ],
+    "stop": [
+      {
+        "command": ".cursor/hooks/on-stop-reinstall-dmg.py",
+        "timeout": 15,
+        "loop_limit": 2
+      }
+    ]
+  }
+}

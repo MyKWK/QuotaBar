@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    name: Build & Test
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Toolchain versions
+        run: |
+          swift --version
+          xcodebuild -version || true
+
+      - name: Lint shell scripts
+        run: for script in scripts/*.sh; do bash -n "$script"; done
+
+      - name: Style hygiene
+        run: bash scripts/check_style.sh
+
+      - name: Guard against committed signing material
+        run: bash scripts/check_no_signing_material.sh
+
+      - name: Guard public source files
+        run: python3 scripts/check_public_files.py
+
+      - name: Build
+        run: swift build
+
+      - name: Test
+        run: swift test
