@@ -7,7 +7,7 @@
 Codex / GPT · Kimi · Cursor · DeepSeek<br>
 Multiple AI services, right in your Mac menu bar.
 
-[简体中文](README.md) · [Get started](#get-started) · [Feedback](https://github.com/MyKWK/QuotaBar/issues)
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · **English** · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português (Brasil)](README.pt-BR.md) · [Get started](#get-started) · [Feedback](https://github.com/MyKWK/QuotaBar/issues)
 
 <img src="docs/images/quotabar-menubar.png" alt="Real QuotaBar menu bar: Codex 21%, Kimi 90%, Cursor 92%, DeepSeek unavailable" width="530">
 
@@ -88,13 +88,19 @@ python3 scripts/check_public_files.py
 
 All GitHub Actions CI, packaging, and release-note sync sources are retained in [`docs/workflow-templates/`](docs/workflow-templates/). They are currently inactive because the publishing OAuth authorization lacks `workflow` scope. With appropriate authorization and a macOS 27 / Xcode 27 runner, move them to `.github/workflows/` to enable automation.
 
+[Promotional copy in nine languages](docs/PROMOTION.md) is available for sharing. These are documentation languages, not a claim that the app interface supports nine languages.
+
 Add collectors through `QuotaServicePlugin` and register them in `QuotaServiceRegistry`. See [CONTRIBUTING.md](CONTRIBUTING.md) and [architecture](docs/architecture.md).
 
 If QuotaBar saves you a few trips to usage pages, consider starring the repository or contributing feedback and new service integrations.
 
 ## Credits and license
 
-Maintained by **MyKWK**, this is an independent custom derivative of [QuotaBar by Chiloh / chilohwei](https://github.com/chilohwei/QuotaBar). Original copyright, attribution, and the complete [QuotaBar Custom License](LICENSE) are retained. Thanks to the original author for the native menu-bar and account-management foundation.
+QuotaBar began as our own local Kimi quota tool, with working app and API verification records dating to August 26, 2026. The multi-service menu bar, system-settings-style layout, and later extensions were developed around MyKWK’s product design.
+
+On September 16, 2026, multi-service development integrated code from [a separate project also named QuotaBar, maintained by Chiloh / chilohwei](https://github.com/chilohwei/QuotaBar). Our existing Kimi functionality was migrated into that foundation, followed by additional service integrations, settings, and local quota history. This edition is maintained by **MyKWK** and combines our original work with retained community code.
+
+The incorporated code retains the original copyright, attribution, and complete [QuotaBar Custom License](LICENSE). See [project origins](docs/ORIGINS.md) for the timeline. Thanks to the original author for the native application and account-management infrastructure.
 
 This edition is not officially affiliated with or endorsed by the upstream project or any AI service. The original license permits personal, educational, research, and other non-commercial use; commercial use requires prior written authorization from the original author. This is not an MIT / Apache license.
 

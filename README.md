@@ -7,7 +7,7 @@
 Codex / GPT · Kimi · Cursor · DeepSeek<br>
 把分散在各个平台的额度和余额，放进 Mac 顶部菜单栏。
 
-[English](README.en.md) · [快速开始](#快速开始) · [功能与接入状态](#功能与接入状态) · [反馈建议](https://github.com/MyKWK/QuotaBar/issues)
+**简体中文** · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português (Brasil)](README.pt-BR.md) · [快速开始](#快速开始) · [功能与接入状态](#功能与接入状态) · [反馈建议](https://github.com/MyKWK/QuotaBar/issues)
 
 ![macOS 27+](https://img.shields.io/badge/macOS-27%2B-black?logo=apple)
 ![Swift 6.4+](https://img.shields.io/badge/Swift-6.4%2B-F05138?logo=swift&logoColor=white)
@@ -100,14 +100,20 @@ python3 scripts/check_public_files.py
 
 GitHub Actions 的 CI、打包与发布说明同步源码完整保存在 [`docs/workflow-templates/`](docs/workflow-templates/)。当前 GitHub 登录授权没有 `workflow` 权限，工作流暂未启用；获得相应授权并具备 macOS 27 / Xcode 27 runner 后可移至 `.github/workflows/`。
 
+[九种语言宣传文案](docs/PROMOTION.md) 可用于项目分享；这些是介绍文档的语言，不代表应用界面已支持九种语言。
+
 新服务通过 `QuotaServicePlugin` 接入，并在 `QuotaServiceRegistry` 注册。界面和历史记录消费统一读数，方便继续扩展。[贡献指南](CONTRIBUTING.md) · [架构说明](docs/architecture.md)
 
 如果它让你少打开几个额度页面，欢迎给仓库一个 Star，也欢迎提交使用体验、问题和新的服务接入。
 
-## 致谢与许可
+## 项目沿革、原创工作与致谢
 
-本仓库由 **MyKWK** 维护，是基于 [Chiloh / chilohwei 的 QuotaBar](https://github.com/chilohwei/QuotaBar) 的独立定制衍生版本，保留原作者的版权、署名和完整 [QuotaBar Custom License](LICENSE)。感谢原作者提供原生菜单栏工具与账号管理的基础。
+QuotaBar 最早是我们自己开发的本机 Kimi 额度工具，2026 年 8 月 26 日已有运行与接口验证记录。顶部栏的多服务展示、类似系统设置的布局，以及后续扩展，按 MyKWK 的产品设计逐步实现。
 
-本定制版与原项目、各 AI 服务商均无官方隶属或背书关系。原许可允许个人、教育、研究及其他非商业用途；商业用途需事先获得原作者书面授权。请阅读完整许可，不应将本仓库理解为 MIT / Apache 等宽松授权。
+2026 年 9 月 16 日，多服务开发引入了 [Chiloh / chilohwei 维护的另一个同名 QuotaBar 项目](https://github.com/chilohwei/QuotaBar) 作为集成基础，将我们已有的 Kimi 功能迁入，并继续扩展服务接入、设置与本机额度历史。当前版本由 **MyKWK** 维护，包含我们的原创工作与实际沿用的社区代码。
+
+外部代码保留原作者版权、署名和完整 [QuotaBar Custom License](LICENSE)。详细过程见 [来源沿革](docs/ORIGINS.md)。感谢原作者提供的原生应用与账号管理代码。
+
+本项目与所引用的社区项目及各 AI 服务商均无官方隶属或背书关系。原许可允许个人、教育、研究及其他非商业用途；商业用途需事先获得原作者书面授权。请阅读完整许可，不应将本仓库理解为 MIT / Apache 等宽松授权。
 
 `docs/releases/` 中原有的版本说明记录上游历史，不代表本定制版已经发布对应安装包。各服务图标和商标归其权利人所有。
